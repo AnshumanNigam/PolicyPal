@@ -48,9 +48,23 @@ advice = (
 st.subheader("🧾 Estimated Annual Charges:")
 import locale
 def format_inr(amount):
-    return f"₹ {amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-formatted_amount = locale.format_string("%0.2f", charges, grouping=True)
+    amount = round(amount, 2)
+    s = str(int(amount))
+    # Get the decimal part
+    decimal = f"{amount:.2f}".split(".")[1]
+
+    # Apply Indian format
+    if len(s) > 3:
+        last3 = s[-3:]
+        rest = s[:-3]
+        rest = ",".join([rest[max(i - 2, 0):i] for i in range(len(rest), 0, -2)][::-1])
+        formatted = f"₹ {rest},{last3}.{decimal}"
+    else:
+        formatted = f"₹ {s}.{decimal}"
+
+    return formatted
 st.success(format_inr(charges))
+
 
 st.subheader("🤖 Insurance Advice:")
 st.info(f"Probability of buying insurance: **{buy_prob:.2%}**")
