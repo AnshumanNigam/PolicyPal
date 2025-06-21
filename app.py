@@ -50,7 +50,7 @@ import locale
 def format_inr(amount):
     return f"₹ {amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 formatted_amount = locale.format_string("%0.2f", charges, grouping=True)
-st.success(f"₹ {formatted_amount}")
+st.success(format_inr(charges))
 
 st.subheader("🤖 Insurance Advice:")
 st.info(f"Probability of buying insurance: **{buy_prob:.2%}**")
