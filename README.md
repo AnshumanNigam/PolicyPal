@@ -1,6 +1,6 @@
 # PolicyPal
 
-###Healthcare costs are rising steadily, and individuals often struggle to estimate their potential medical expenses or decide whether health insurance is necessary. Young, healthy users may underestimate the need for insurance, while high-risk individuals may not realize how costly going uninsured can be.
+### Healthcare costs are rising steadily, and individuals often struggle to estimate their potential medical expenses or decide whether health insurance is necessary. Young, healthy users may underestimate the need for insurance, while high-risk individuals may not realize how costly going uninsured can be.
 
 Traditional insurance quote systems are often opaque, generic, and lack personalization. There is a need for a tool that can:
 
