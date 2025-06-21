@@ -47,7 +47,8 @@ advice = (
 
 st.subheader("🧾 Estimated Annual Charges:")
 import locale
-locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8') 
+def format_inr(amount):
+    return f"₹ {amount:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 formatted_amount = locale.format_string("%0.2f", charges, grouping=True)
 st.success(f"₹ {formatted_amount}")
 
